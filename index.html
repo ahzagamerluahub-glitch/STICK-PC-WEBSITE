@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NexusOS - Mobile Gaming Console</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- Prevent favicon error -->
+</head>
+<body>
+
+    <!-- Boot Screen -->
+    <div id="boot-screen">
+        <div class="boot-logo">
+            <h1>NEXUS<span>OS</span></h1>
+            <div class="loading-bar"><div class="progress"></div></div>
+            <p>SYSTEM INITIALIZING...</p>
+        </div>
+    </div>
+
+    <!-- Main Interface -->
+    <div id="ui-container" class="hidden">
+        <!-- Top Status Bar -->
+        <header class="status-bar">
+            <div class="status-left">
+                <span id="clock">12:00</span>
+            </div>
+            <div class="status-right">
+                <span id="battery">100% 🔋</span>
+                <span id="controller-status">🎮 Connect</span>
+            </div>
+        </header>
+
+        <!-- Main Display Area -->
+        <main id="display-area">
+            <!-- Welcome / User Profile -->
+            <div class="content-panel active" id="panel-home">
+                <div class="user-card">
+                    <div class="avatar">G</div>
+                    <h2>Player One</h2>
+                    <p>Welcome back to Nexus.</p>
+                </div>
+            </div>
+
+            <!-- Placeholder Contents (Hidden by default, shown via JS) -->
+            <div class="content-panel" id="panel-games"><h2>Play Games</h2><p>No games installed.</p></div>
+            <div class="content-panel" id="panel-emulator"><h2>Emulator</h2><p>Load ROMs here.</p></div>
+            <div class="content-panel" id="panel-cloud"><h2>Cloud Gaming</h2><p>Stream now.</p></div>
+            <div class="content-panel" id="panel-settings"><h2>Settings</h2><p>System config.</p></div>
+            <div class="content-panel" id="panel-gallery"><h2>Gallery</h2><p>Screenshots & Videos.</p></div>
+        </main>
+
+        <!-- XMB Horizontal Menu -->
+        <nav class="xmb-menu">
+            <ul id="menu-list">
+                <li data-target="panel-home" class="active">
+                    <div class="icon">🏠</div>
+                    <span>Home</span>
+                </li>
+                <li data-target="panel-games">
+                    <div class="icon">🎮</div>
+                    <span>Play Games</span>
+                </li>
+                <li data-target="panel-emulator">
+                    <div class="icon">💾</div>
+                    <span>Emulator</span>
+                </li>
+                <li data-target="panel-cloud">
+                    <div class="icon">☁️</div>
+                    <span>Cloud Gaming</span>
+                </li>
+                <li data-target="panel-gallery">
+                    <div class="icon">🖼️</div>
+                    <span>Gallery</span>
+                </li>
+                <li data-target="panel-settings">
+                    <div class="icon">⚙️</div>
+                    <span>Settings</span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- On-screen controls for mobile (invisible if controller used) -->
+    <div class="dpad-overlay">
+        <button id="fs-btn">⛶ Fullscreen</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
